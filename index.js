@@ -15,7 +15,7 @@ const client = new Discord.Client({
 
 client.commands = new Discord.Collection();
 require('dotenv').config()
-
+require("./utils/loadEvents")(client);
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
