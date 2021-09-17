@@ -25,12 +25,4 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-const commandsFiles = fs.readdirSync('./owner/').filter(file => file.endsWith('.js'));
-
-for (const file of commandsFiles) {
-    const command = require(`./owner/${file}`)
-
-    client.commands.set(command.name, command);
-}
-
 client.login(process.env.token);
